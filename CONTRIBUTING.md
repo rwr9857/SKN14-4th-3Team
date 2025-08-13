@@ -11,6 +11,14 @@ pip install -r requirements.txt
 
 # commit 전 코드포멧팅 체크 (선택)
 pre-commit install
+
+# 처음 실행
+python manage.py makemigrations
+python manage.py migrate
+python manage.py collectstatic
+
+# 로컬 서버 실행
+python manage.py runserver 0.0.0.0:8000
 ```
 
 ### 루트디렉토리에 `.env` 포함하기
@@ -33,7 +41,7 @@ DEBUG=0
 
 ```bash
 $ docker build -t skn4th_app_image . 
-$ docker run --name skn4th_app --env-file .env -p 8000:8000 skn4th_app_image
+$ docker run -d --name skn4th_app --env-file .env -p 8000:8000 skn4th_app_image
 ```
 
 ## docker-compose 실행 방법
