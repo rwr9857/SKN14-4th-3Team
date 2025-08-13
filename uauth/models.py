@@ -7,7 +7,7 @@ from django import forms
 class UserDetail(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     birthday = models.DateField(null=True, blank=True)
-    profile = models.ImageField(upload_to='profile/', null=True, blank=True) 
+    profile = models.ImageField(upload_to="profile/", null=True, blank=True)
 
 
 class UserForm(UserCreationForm):

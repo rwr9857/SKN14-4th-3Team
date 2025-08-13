@@ -15,12 +15,34 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='UserDetail',
+            name="UserDetail",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('birthday', models.DateField(blank=True, null=True)),
-                ('profile', models.ImageField(blank=True, default='default.jpg', null=True, upload_to='profile/')),
-                ('user', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("birthday", models.DateField(blank=True, null=True)),
+                (
+                    "profile",
+                    models.ImageField(
+                        blank=True,
+                        default="default.jpg",
+                        null=True,
+                        upload_to="profile/",
+                    ),
+                ),
+                (
+                    "user",
+                    models.OneToOneField(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to=settings.AUTH_USER_MODEL,
+                    ),
+                ),
             ],
         ),
     ]
